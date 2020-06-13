@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/hashicorp/terraform/plugin"
-	"github.com/nicolai86/terraform-provider-couchdb/couchdb"
+	"github.com/hashicorp/terraform-plugin-sdk/plugin"
+	"github.com/robsonvn/terraform-provider-couchdb/couchdb"
 )
 
 func main() {

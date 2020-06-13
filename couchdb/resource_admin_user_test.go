@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/hashicorp/terraform/helper/resource"
-	"github.com/hashicorp/terraform/terraform"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/resource"
+	"github.com/hashicorp/terraform-plugin-sdk/terraform"
 	couchdb "github.com/nicolai86/couchdb-go"
 )
 
@@ -92,6 +92,6 @@ var testAccCouchDBAdminUser_basic = `
 resource "couchdb_admin_user" "test" {
 	name = "test"
 	password = "test"
-	
+
 	node = "nonode@nohost"
 }`

@@ -1,11 +1,10 @@
 package couchdb
 
 import (
-	"github.com/hashicorp/terraform/helper/schema"
-	"github.com/hashicorp/terraform/terraform"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/terraform"
 )
 
-// Provider returns a terraform.ResourceProvider.
 func Provider() terraform.ResourceProvider {
 	return &schema.Provider{
 		Schema: map[string]*schema.Schema{
@@ -28,7 +27,6 @@ func Provider() terraform.ResourceProvider {
 
 		ResourcesMap: map[string]*schema.Resource{
 			"couchdb_database":                 resourceDatabase(),
-			"couchdb_database_replication":     resourceDatabaseReplication(),
 			"couchdb_user":                     resourceUser(),
 			"couchdb_admin_user":               resourceAdminUser(),
 			"couchdb_database_design_document": resourceDesignDocument(),

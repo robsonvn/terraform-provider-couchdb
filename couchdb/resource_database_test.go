@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/hashicorp/terraform/helper/resource"
-	"github.com/hashicorp/terraform/terraform"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/resource"
+	"github.com/hashicorp/terraform-plugin-sdk/terraform"
 )
 
 func TestAccCouchDBDatabase_basic(t *testing.T) {
@@ -126,7 +126,7 @@ resource "couchdb_database" "test" {
 	security {
 		admins  = ["admin"]
 		members = ["max"]
-		
+
 		admin_roles  = ["maintenance"]
 		member_roles = ["users"]
 	}
@@ -136,7 +136,7 @@ resource "couchdb_database" "test" {
 var testAccCouchDBDatabase = `
 resource "couchdb_database" "test" {
 	name = "test"
-	
+
 	security {}
 
 	clustering {

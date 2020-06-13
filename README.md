@@ -17,7 +17,7 @@ Requirements
 Building The Provider
 ---------------------
 
-Clone repository to: `$GOPATH/src/github.com/nicolai86/terraform-provider-couchdb`
+Clone repository to: `$GOPATH/src/github.com/robsonvn/terraform-provider-couchdb`
 
 ```sh
 $ mkdir -p $GOPATH/src/github.com/nicolai86; cd $GOPATH/src/github.com/nicolai86
@@ -27,7 +27,7 @@ $ git clone git@github.com:nicolai86/terraform-provider-couchdb
 Enter the provider directory and build the provider
 
 ```sh
-$ cd $GOPATH/src/github.com/nicolai86/terraform-provider-couchdb
+$ cd $GOPATH/src/github.com/robsonvn/terraform-provider-couchdb
 $ make build
 ```
 

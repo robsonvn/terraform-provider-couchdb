@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/hashicorp/terraform/helper/resource"
-	"github.com/hashicorp/terraform/terraform"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/resource"
+	"github.com/hashicorp/terraform-plugin-sdk/terraform"
 	couchdb "github.com/nicolai86/couchdb-go"
 )
 
@@ -79,6 +79,8 @@ func testAccCouchDBDesignDocumentDestroy(s *terraform.State) error {
 var testAccCouchDBDesignDocument = `
 resource "couchdb_database" "test" {
 	name = "test"
+
+    security {}
 }
 
 resource "couchdb_database_design_document" "test" {
@@ -94,6 +96,8 @@ resource "couchdb_database_design_document" "test" {
 var testAccCouchDBDesignDocument_update = `
 resource "couchdb_database" "test" {
 	name = "test"
+
+	security {}
 }
 
 resource "couchdb_database_design_document" "test" {

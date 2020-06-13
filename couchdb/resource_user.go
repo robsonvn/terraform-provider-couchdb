@@ -3,7 +3,7 @@ package couchdb
 import (
 	"context"
 
-	"github.com/hashicorp/terraform/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	couchdb "github.com/nicolai86/couchdb-go"
 )
 

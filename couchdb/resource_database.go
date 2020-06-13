@@ -4,7 +4,7 @@ import (
 	"context"
 	"strconv"
 
-	"github.com/hashicorp/terraform/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	couchdb "github.com/nicolai86/couchdb-go"
 )
 
@@ -25,7 +25,7 @@ func resourceDatabase() *schema.Resource {
 			"security": {
 				Type:        schema.TypeList,
 				MaxItems:    1,
-				Optional:    true,
+				Required:    true,
 				Description: "Security configuration of the database",
 				Elem: &schema.Resource{
 					Schema: map[string]*schema.Schema{
@@ -209,6 +209,7 @@ func resourceDatabaseRead(d *schema.ResourceData, m interface{}) error {
 	if err != nil {
 		return err
 	}
+
 	security := []map[string][]string{
 		{
 			"admins":       sec.Admins.Names,

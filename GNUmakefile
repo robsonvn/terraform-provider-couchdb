@@ -12,7 +12,11 @@ test: fmtcheck
 		xargs -t -n4 go test $(TESTARGS) -timeout=30s -parallel=4
 
 start_couchdb:
-	docker run -d -p 5984:5984 --rm -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=admin --name couchdb couchdb:1.6.1 
+	docker run -d -p 5984:5984 --rm -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=admin --name couchdb couchdb:2.3.1
+	sleep 2
+	curl -X PUT http://admin:admin@localhost:5984/_users
+	curl -X PUT http://admin:admin@localhost:5984/_replicator
+
 
 testacc: fmtcheck
 	TF_ACC=1 go test $(TEST) -v $(TESTARGS) -timeout 120m
